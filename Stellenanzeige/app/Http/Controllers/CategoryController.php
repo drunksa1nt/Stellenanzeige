@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\category;
+use Illuminate\Http\Request;
 use App\Http\Requests\StorecategoryRequest;
 use App\Http\Requests\UpdatecategoryRequest;
 
@@ -16,51 +17,42 @@ class CategoryController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    //Insert Into Database
+    public function store_data(Request $request){
+        $data = new category;
+
+        $data->name = $request->input("categoryname");
+
+        $data->save();
+        return back();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StorecategoryRequest $request)
-    {
-        //
+    function categoryliste(){
+        $categoryliste = category::all();
+
+        return view('categoryliste',compact('categoryliste'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(category $category)
-    {
-        //
+    public function delete_categoryliste($id){
+        category::destroy($id);
+        return back();
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(category $category)
-    {
-        //
+
+    public function edit_categoryliste($id){
+        $data= category::find($id);
+
+        return view('edit_categoryliste',compact('data'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdatecategoryRequest $request, category $category)
-    {
-        //
+    public function update_data(Request $request , $id){
+        $data = category::find($id);
+
+        $data->Name = $request->input("name");
+
+        $data->save();
+        return back();
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(category $category)
-    {
-        //
-    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\company;
+use Illuminate\Http\Request;
 use App\Http\Requests\StorecompanyRequest;
 use App\Http\Requests\UpdatecompanyRequest;
 
@@ -15,52 +16,44 @@ class CompanyController extends Controller
     {
         //
     }
+    //Insert Into Database
+    public function store_data(Request $request){
+        $data = new company;
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $data->name = $request->input("name");
+        $data->Gruendungsjahr = $request->input("Gruendungsjahr");
+
+        $data->save();
+        return back();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StorecompanyRequest $request)
-    {
-        //
+    function companyliste(){
+        $companyliste = company::all();
+
+        return view('companyliste',compact('companyliste'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(company $company)
-    {
-        //
+    public function delete_companyliste($id){
+        company::destroy($id);
+        return back();
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(company $company)
-    {
-        //
+
+    public function edit_companyliste($id){
+        $data= company::find($id);
+
+        return view('edit_companyliste',compact('data'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdatecompanyRequest $request, company $company)
-    {
-        //
+    public function update_data(Request $request , $id){
+        $data = company::find($id);
+
+        $data->Name = $request->input("name");
+        $data->gruendungsjahr = $request->input("Gruendungsjahr");
+
+        $data->save();
+        return back();
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(company $company)
-    {
-        //
-    }
 }

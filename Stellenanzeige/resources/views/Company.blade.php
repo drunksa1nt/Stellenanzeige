@@ -7,19 +7,19 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </head>
-    <title>Jobs</title>
+    <title>Company</title>
 <body>
     <center>
-        <h1>Jobs</h1>
+        <h1>Company</h1>
     <form action="store_data" method="POST">
         @csrf
         <div class="mb-3">
-            <label for="InputJobName" class="form-label">Jobname</label>
+            <label for="InputCompanyName" class="form-label">Company</label>
             <input type="text" name="Name" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="jobbeschreibung" class="form-label">Job Beschreibung</label>
-            <input type="text" name="Beschreibung" class="form-control" >
+            <label for="Gruendungsjahr" class="form-label">Gruendungsjahr</label>
+            <input type="text" name="Gruendungsjahr" class="form-control" >
         </div><br>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>                                
