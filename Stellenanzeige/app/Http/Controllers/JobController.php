@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreJobRequest;
 use App\Http\Requests\UpdateJobRequest;
+use DB;
+
 
 class JobController extends Controller
 {
@@ -16,51 +19,45 @@ class JobController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+
+//Insert Into Database
+    public function store_data(Request $request){
+        $data = new Job;
+
+        $data->name = $request->input("Name");
+        $data->Beschreibung = $request->input("Beschreibung");
+
+        $data->save();
+        return back();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreJobRequest $request)
-    {
-        //
+    function jobliste(){
+        $jobliste = Job::all();
+
+        return view('jobliste',compact('jobliste'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Job $job)
-    {
-        //
+    public function delete_jobliste($id){
+        Job::destroy($id);
+        return back();
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Job $job)
-    {
-        //
+
+    public function edit_jobliste($id){
+        $data= Job::find($id);
+
+        return view('edit_jobliste',compact('data'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateJobRequest $request, Job $job)
-    {
-        //
+    public function update_data(Request $request , $id){
+        $data = Job::find($id);
+
+        $data->Name = $request->input("Name");
+        $data->Beschreibung = $request->input("Beschreibung");
+
+        $data->save();
+        return back();
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Job $job)
-    {
-        //
-    }
 }

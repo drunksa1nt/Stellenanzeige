@@ -16,7 +16,7 @@ und Co. an.
 Tipp: Nutze das Terminal „sail artisan make:model Job --all"
 Fülle die angelegten Dateien mit Inhalten. Achte dabei besonders auf die Migrations
 und die korrekten Datenbankspalten.
-# Aufgabe 4 []
+# Aufgabe 4 [25%]
 Lege zu jedem Modell eine Listenansicht, eine Detailansicht und eine Erstellungs-/ Bear-
 beitungsansicht an. Verknüpfe die Ansichten mit den Controllern.
 Ziel: Alle Ansichten sind mit den Controllern verknüpft und zeigen die gewünschten Da-
