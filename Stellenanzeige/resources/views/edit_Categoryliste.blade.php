@@ -40,11 +40,11 @@
                     </svg>
                 </div>
 <center>
-        <h1>Jobs EDIT</h1>
-    <form action="{{url('update_data', $data->id)}}" method="POST">
+        <h1>Category EDIT</h1>
+    <form action="{{url('update_category', $data->id)}}" method="POST">
         @csrf
         <div class="mb-3">
-            <label for="InputJobName" class="form-label">Category</label>
+            <label for="InputCategoryName" class="form-label">Category</label>
             <input type="text" name="Name" value="{{$data->Name}}" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>

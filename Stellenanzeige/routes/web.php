@@ -26,7 +26,7 @@ Route::get('jobs' , function(){
     return view ('jobs');
 });
 
-Route::post('store_data' , [App\Http\Controllers\JobController::class , 'store_data']);
+Route::post('store_jobs' , [App\Http\Controllers\JobController::class , 'store_jobs']);
 
 Route::get('jobliste' , [App\Http\Controllers\JobController::class ,'jobliste']);
 
@@ -34,13 +34,13 @@ Route::get('delete_jobliste/{id}', [App\Http\Controllers\JobController::class ,'
 
 Route::get('edit_jobliste/{id}', [App\Http\Controllers\JobController::class ,'edit_jobliste']);
 
-Route::post('update_data/{id}', [App\Http\Controllers\JobController::class ,'update_data']);
+Route::post('update_jobs/{id}', [App\Http\Controllers\JobController::class ,'update_jobs']);
 //JOBS\\
 //Category
 Route::get('category' , function(){
     return view ('category');
 });
-Route::post('store_data' , [App\Http\Controllers\CategoryController::class , 'store_data']);
+Route::post('store_category' , [App\Http\Controllers\CategoryController::class , 'store_category']);
 
 Route::get('categoryliste' , [App\Http\Controllers\CategoryController::class ,'categoryliste']);
 
@@ -48,14 +48,14 @@ Route::get('delete_categoryliste/{id}', [App\Http\Controllers\CategoryController
 
 Route::get('edit_categoryliste/{id}', [App\Http\Controllers\CategoryController::class ,'edit_categoryliste']);
 
-Route::post('update_data/{id}', [App\Http\Controllers\CategoryController::class ,'update_data']);
+Route::post('update_category/{id}', [App\Http\Controllers\CategoryController::class ,'update_category']);
 
 //Category\\
 //User
 Route::get('user' , function(){
     return view ('user');
 });
-Route::post('store_data' , [App\Http\Controllers\UserController::class , 'store_data']);
+Route::post('store_user' , [App\Http\Controllers\UserController::class , 'store_user']);
 
 Route::get('userliste' , [App\Http\Controllers\UserController::class ,'userliste']);
 
@@ -63,14 +63,15 @@ Route::get('delete_userliste/{id}', [App\Http\Controllers\UserController::class 
 
 Route::get('edit_userliste/{id}', [App\Http\Controllers\UserController::class ,'edit_userliste']);
 
-Route::post('update_data/{id}', [App\Http\Controllers\UserController::class ,'update_data']);
+Route::post('update_user/{id}', [App\Http\Controllers\UserController::class ,'update_user']);
 
 //User\\
 //Company
+
 Route::get('company' , function(){
     return view ('company');
 });
-Route::post('store_data' , [App\Http\Controllers\CompanyController::class , 'store_data']);
+Route::post('store_company' , [App\Http\Controllers\CompanyController::class , 'store_company']);
 
 Route::get('companyliste' , [App\Http\Controllers\CompanyController::class ,'companyliste']);
 
@@ -78,7 +79,7 @@ Route::get('delete_companyliste/{id}', [App\Http\Controllers\CompanyController::
 
 Route::get('edit_companyliste/{id}', [App\Http\Controllers\CompanyController::class ,'edit_companyliste']);
 
-Route::post('update_data/{id}', [App\Http\Controllers\CompanyController::class ,'update_data']);
+Route::post('update_company/{id}', [App\Http\Controllers\CompanyController::class ,'update_company']);
 
 
 //Company\\

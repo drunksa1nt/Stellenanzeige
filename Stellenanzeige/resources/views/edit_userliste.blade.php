@@ -41,7 +41,7 @@
                 </div>
 <center>
         <h1>Jobs EDIT</h1>
-    <form action="{{url('update_data', $data->id)}}" method="POST">
+    <form action="{{url('update_user', $data->id)}}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="InputUsername" class="form-label">Username</label>

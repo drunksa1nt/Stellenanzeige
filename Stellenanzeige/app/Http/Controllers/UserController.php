@@ -17,7 +17,7 @@ class UserController extends Controller
         
     }
    //Insert Into Database
-   public function store_data(Request $request){
+   public function store_user(Request $request){
     $data = new User;
 
     $data->name = $request->input("username");
@@ -44,7 +44,7 @@ public function edit_userliste($id){
     return view('edit_userliste',compact('data'));
 }
 
-public function update_data(Request $request , $id){
+public function update_user(Request $request , $id){
     $data = User::find($id);
 
     $data->Name = $request->input("Name");

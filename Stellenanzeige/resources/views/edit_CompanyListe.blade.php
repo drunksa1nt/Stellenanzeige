@@ -39,15 +39,16 @@
                 </div>
 <center>
     <h1>Company EDIT</h1>
-<form action="{{url('update_data', $data->id)}}" method="POST">
+<form action="{{url('update_company', $data->id)}}" method="POST">
+    @csrf
     
     <div class="mb-3">
-        <label for="InputCompany" class="form-label">Company</label>
-        <input type="text" name="name" value="{{$data->ame}}" class="form-control">
+        <label type="text" for="InputCompany" class="form-label">Company</label>
+        <input type="text" name="name" value="{{$data->name}}" class="form-control">
     </div>
     <div class="mb-3">
         <label for="companyliste" class="form-label">Gruendungsjahr</label>
-        <input type="text" name="Gruendungsjahr" value="{{$data->gruendungsjahr}}" class="form-control" ><!--NOt worky-->
+        <input type="text" name="Gruendungsjahr" value="{{$data->Gruendungsjahr}}" class="form-control" ><!--NOt worky-->
     </div><br>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

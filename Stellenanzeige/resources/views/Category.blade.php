@@ -38,7 +38,7 @@
                 </div>
     <center>
     <h1>Category</h1>
-    <form action="store_data" method="POST">
+    <form action="store_category" method="POST">
         @csrf
         <div class="mb-3">
             <label for="Category" class="form-label">Category</label>

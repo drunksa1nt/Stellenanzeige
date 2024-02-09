@@ -48,7 +48,8 @@
                                 <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-Black">User</h2>                              
                                 <center>
 
-                                    <form action="store_data" method="POST">
+                                    <form action="store_user" method="POST">
+                                        @csrf
                                         <div class="mb-3">
                                             <label for="username" class="form-label">UserName</label>
                                             <input type="text" name="username" class="form-control">

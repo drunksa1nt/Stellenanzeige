@@ -17,7 +17,7 @@ class CompanyController extends Controller
         //
     }
     //Insert Into Database
-    public function store_data(Request $request){
+    public function store_company(Request $request){
         $data = new company;
 
         $data->name = $request->input("name");
@@ -45,11 +45,11 @@ class CompanyController extends Controller
         return view('edit_companyliste',compact('data'));
     }
 
-    public function update_data(Request $request , $id){
+    public function update_company(Request $request , $id){
         $data = company::find($id);
 
         $data->Name = $request->input("name");
-        $data->gruendungsjahr = $request->input("Gruendungsjahr");
+        $data->Gruendungsjahr = $request->input("Gruendungsjahr");
 
         $data->save();
         return back();

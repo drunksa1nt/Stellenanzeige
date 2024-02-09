@@ -21,7 +21,7 @@ class JobController extends Controller
 
 
 //Insert Into Database
-    public function store_data(Request $request){
+    public function store_jobs(Request $request){
         $data = new Job;
 
         $data->name = $request->input("Name");
@@ -49,7 +49,7 @@ class JobController extends Controller
         return view('edit_jobliste',compact('data'));
     }
 
-    public function update_data(Request $request , $id){
+    public function update_jobs(Request $request , $id){
         $data = Job::find($id);
 
         $data->Name = $request->input("Name");

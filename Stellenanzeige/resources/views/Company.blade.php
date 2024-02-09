@@ -38,11 +38,11 @@
                 </div>
     <center>
         <h1>Company</h1>
-    <form action="store_data" method="POST">
+    <form action="store_company" method="POST">
         @csrf
         <div class="mb-3">
             <label for="InputCompanyName" class="form-label">Company</label>
-            <input type="text" name="Name" class="form-control">
+            <input type="text" name="name" class="form-control">
         </div>
         <div class="mb-3">
             <label for="Gruendungsjahr" class="form-label">Gruendungsjahr</label>

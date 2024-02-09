@@ -39,7 +39,8 @@
                 </div>
        <center>
         <h1>Jobs EDIT</h1>
-    <form action="{{url('update_data', $data->id)}}" method="POST">
+    <form action="{{url('update_jobs', $data->id)}}" method="POST">
+        @csrf
         <div class="mb-3">
             <label for="InputJobName" class="form-label">Jobname</label>
             <input type="text" name="Name" value="{{$data->Name}}" class="form-control">

@@ -18,7 +18,7 @@ class CategoryController extends Controller
     }
 
     //Insert Into Database
-    public function store_data(Request $request){
+    public function store_category(Request $request){
         $data = new category;
 
         $data->name = $request->input("categoryname");
@@ -45,10 +45,10 @@ class CategoryController extends Controller
         return view('edit_categoryliste',compact('data'));
     }
 
-    public function update_data(Request $request , $id){
+    public function update_category(Request $request , $id){
         $data = category::find($id);
 
-        $data->Name = $request->input("name");
+        $data->Name = $request->input("Name");
 
         $data->save();
         return back();

@@ -39,7 +39,7 @@
                 </div>
     <center>
         <h1>Jobs</h1>
-    <form action="store_data" method="POST">
+    <form action="store_jobs" method="POST">
         @csrf
         <div class="mb-3">
             <label for="InputJobName" class="form-label">Jobname</label>
